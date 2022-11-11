@@ -1,0 +1,14 @@
+.product-title {
+    width: 200px;
+    height: 200px;
+}
+.product-card {
+    width: 500px;
+    height: 600px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+.product-image {
+    width: 200px;
+}

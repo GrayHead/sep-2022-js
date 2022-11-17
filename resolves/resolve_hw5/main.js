@@ -114,16 +114,16 @@
 // let number = foo(arr);
 // console.log(number);
 
-let i = 0;
-let n = 0;
-while (i < 5) {
-    i++;
-    if (i === 3) {
-        continue;
-    }
-    n += i; // 1 , 3, 7, 12
-    console.log(n);
-}
+// let i = 0;
+// let n = 0;
+// while (i < 5) {
+//     i++;
+//     if (i === 3) {
+//         continue;
+//     }
+//     n += i; // 1 , 3, 7, 12
+//     console.log(n);
+// }
 
 
 

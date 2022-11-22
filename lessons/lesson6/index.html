@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // let str = 'hello okten';
+    // console.log(str[0]);
+    // let toUpperCase = str.toUpperCase();
+    // console.log(toUpperCase);
+    // console.log(toUpperCase.toLowerCase());
+    // console.log(str.startsWith('h'));
+    // console.log(str.endsWith('en!'));
+    //
+    // let substring = str.substring(0, 7);
+    // console.log(substring);
+    //
+    // let indexOfE = str.indexOf('e');
+    // console.log(indexOfE);
+    // let indexOfT = str.indexOf('t');
+    // console.log(str.substring(indexOfE, indexOfT));
+    // console.log(str.charAt(7));
+    //
+    // let phone = '(067)123-12-12';
+    // let result = phone
+    //     .replaceAll('(', '')
+    //     .replaceAll(')', '')
+    //     .replaceAll('-', '');
+    // console.log(result);
+    // console.log(phone.replaceAll(/[)(-]/g, ''));
+
+    // let obj = 'name:"vasya",age:31';
+    // let split = obj.split(',');
+    // console.log(split);
+    // let tupleName = split[0];
+    // let nameValue = tupleName.split(':');
+    // console.log(nameValue[1]);
+    // let tupleAge = split[1];
+
+
+    /*------------------------------*/
+    // Array.isArray([]);//true
+    // Array.isArray({});//false
+
+    // let arr = [];
+    // arr[arr.length] = 'asdqwe0';
+    // console.log(arr.push('asdqwe1')); // new lenght
+    // console.log(arr.push('asdqwe2')); // new lenght
+    // console.log(arr.push('asdqwe3')); // new lenght
+    // console.log(arr.push('asdqwe4')); // new lenght
+    // console.log(arr);
+    //
+    // console.log(arr.pop());
+    // console.log(arr);
+    // console.log(arr.shift());
+    // console.log(arr);
+    // arr.unshift('6t1r61r36');
+    // console.log(arr);
+    //
+    // let join = arr.join(':');
+    // console.log(join);
+    //
+    // let nums = [1, 2, 3, 4];
+    // let concat = arr.concat(nums);
+    // console.log(concat);
+
+
+    // let users = [
+    //     {name: 'vasya', age: 31, status: false},
+    //     {name: 'petya', age: 30, status: true},
+    //     {name: 'kolya', age: 29, status: true},
+    //     {name: 'olya', age: 28, status: false},
+    //     {name: 'max', age: 30, status: true},
+    //     {name: 'anya', age: 31, status: false},
+    //     {name: 'oleg', age: 28, status: false},
+    //     {name: 'andrey', age: 29, status: true},
+    //     {name: 'masha', age: 30, status: true},
+    //     {name: 'olya', age: 31, status: false},
+    //     {name: 'max', age: 31, status: true}
+    // ];
+    //
+    // let splice = users.splice(0, 2, '!!!');
+    // console.log(splice);
+    // console.log(users);
+
+    // let arr = [11, 22, 33, 44, 55];
+    // let numbers = arr.reverse();
+    // console.log(numbers);
+    // arr.includes(11);//true
+
+    // let str = ' asd qwe ';
+    // console.log(str.length);
+    // let s = str.trim();
+    // console.log(s);
+    // console.log(s.length);
+
+
+    /*----------------------------*/
+
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
+
+
+    // users.forEach((value) => console.log(value));
+
+    // let filter = users.filter((user, index, arr) => user.age > 30 && user.status);
+    // console.log(filter);
+
+
+    // users
+    //     .map((user, index) => ({id: index + 1, name: user.name, age: user.age}))
+    //     .filter(value => value.id % 2 === 0)
+    //     .forEach(value => console.log(value));
+
+
+    // console.log(users.sort(function (a, b) {
+    //     return a.name.length - b.name.length;
+    // }));
+
+    // console.log(users.sort(function (a, b) {
+    //     if (a.name < b.name) {
+    //         return -1;
+    //     }
+    //     if (a.name > b.name) {
+    //         return 1;
+    //     }
+    //     if (a.name === b.name) {
+    //         return 0;
+    //     }
+    // }));
+
+    let reduce = users.reduce((accumulator, user) => {
+        accumulator.names.push(user.name);
+        accumulator.ages.push(user.age);
+        accumulator.statues.push(user.status);
+        return accumulator;
+    }, {names: [], ages: [], statues: []});
+
+
+    console.log(reduce);
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    // let user = {
+    //     name : 'kokos',
+    //     age: 31
+    // }
+    // user.age = 'dog';
+
+
+    function userBuilder(name, age) {
+        let user = {name, age};
+
+        return {
+            setAge: function (age) {
+                if (typeof age === 'string') {
+                    throw new Error('newAge must be a number type')
+                } else {
+                    user.age = age;
+                }
+            },
+            userInfo: function () {
+                return {...user}
+            },
+            getAge: function () {
+                return user.age;
+            },
+        };
+
+    }
+
+    console.log();
+    let builder = userBuilder('asd', 123);
+    builder.setAge(100);
+    console.log(builder.userInfo());
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .uStyle {
+            background: silver;
+        }
+    </style>
+</head>
+<body>
+<h1>hello</h1>
+
+<p class="asd">
+
+
+</p>
+
+<ul class="users"></ul>
+
+<form name="f1">
+
+    <input type="text" name="main">
+</form>
+
+
+<script>
+
+    let h1 = document.getElementsByTagName('h1')[0];
+
+    let main = document.forms.f1.main;
+    main.oninput = function () {
+
+        h1.innerText = main.value;
+
+    };
+
+
+    // let div = document.createElement('div');
+    // div.innerText = 'ashudfhsagfdhg';
+    // div.setAttribute('qqq', 'qwe');
+    //
+    // let pList = document.getElementsByTagName('p');
+    // let p = pList[0];
+    // console.log(p);
+    // p.appendChild(div);
+    //
+    // let h1 = document.getElementsByTagName('h1')[0];
+    // document.body.insertBefore(p, h1);
+
+
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'olya', age: 28, status: false},
+        {name: 'olya', age: 28, status: false},
+        {name: 'olya', age: 28, status: false},
+        {name: 'olya', age: 28, status: false},
+        {name: 'olya', age: 28, status: false},
+        {name: 'olya', age: 28, status: false},
+        {name: 'olya', age: 28, status: false},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
+
+    // let usersBlock = document.querySelector('.users');
+
+    let usersBlockList = document.getElementsByClassName('users');
+    let usersBlock1 = usersBlockList[0];
+
+    for (const user of users) {
+        let li = document.createElement('li');
+        li.innerText = `${user.name} ${user.age} ${user.status}`;
+        li.classList.add('uStyle');
+        li.onclick = function (e) {
+            let text = li.innerHTML;
+            li.innerHTML = `<big>${text}</big>`
+        };
+
+        usersBlock1.appendChild(li);
+    }
+
+    // document.body.onmousemove = function (e) {
+    //     document.body.style.background = `rgb(${e.pageX},${e.pageY},${e.pageY})`;
+    // };
+
+    document.body.addEventListener('click', function (e) {
+        console.log(e.target);
+
+    });
+
+
+</script>
+</body>
+</html>

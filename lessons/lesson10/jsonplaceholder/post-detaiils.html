@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let yourPageURLExactUrlInSearchBar = location.href;
+    let url = new URL(yourPageURLExactUrlInSearchBar);
+    let post = url.searchParams.get('post');
+
+    let parse = JSON.parse(post);
+    console.log(parse);
+
+    // build DOM
+</script>
+</body>
+</html>

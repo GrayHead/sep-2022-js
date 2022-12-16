@@ -5,17 +5,55 @@
     <title>Title</title>
 </head>
 <body>
+<input type="password" name="pass" placeholder="enter your passwird">
 
+
+<button>show pass</button>
+
+
+<ul></ul>
 <script>
 
-    let date = new Date();
-    console.log(date);
-
-    localStorage.setItem('lastSession');
 
     // passowrd show hide
+
+    // let input = document.querySelector('input');
+    // let btn = document.querySelector('button');
+    // btn.onmousedown = function () {
+    //     input.type = 'text';
+    // };
+    // btn.onmouseup = function () {
+    //     input.type = 'password';
+    // };
+
+
     // localstoradge
+    let ul = document.querySelector('ul');
+
+    let visits = localStorage.getItem('visits'); // '[]'
+
+
+    if (!visits) {
+        visits = [];
+        localStorage.setItem('visits', JSON.stringify(visits))
+    }
+
+    let arrayOfVisits = JSON.parse(localStorage.getItem('visits'));
+    arrayOfVisits.push(new Date());
+
+
+    localStorage.setItem('visits', JSON.stringify(arrayOfVisits));
+
+    for (const visitItem of arrayOfVisits) {
+
+        let li = document.createElement('li');
+        li.innerText = visitItem;
+        ul.append(li);
+    }
+
+
     // recursion
+
 
 </script>
 </body>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .uStyle {
+            background: silver;
+        }
+    </style>
+</head>
+<body>
+<h1>hello</h1>
+
+<p class="asd">
+    <a href="">asdasd</a>
+
+</p>
+
+<ul class="users"></ul>
+
+<form name="f1">
+
+    <input type="text" name="main">
+</form>
+
+<div>
+
+    Lorem ip<b>sum dolor sit amet, consectetur adipisicing elit. Esse labore pariatur quibusdam quis? Accusamus
+    alias,</b>
+    aliqua<i>m aperiam</i> consectetur excepturi expedita illum ipsa ipsum non officiis perspiciatis rerum tenetur
+    veniam!
+    Velit!
+    <div>
+
+        <div></div>
+    </div>
+</div>
+
+<ul>
+    <li>data 1</li>
+    <li>data 2</li>
+    <li>data 3</li>
+    <li>data 4</li>
+    <li>data 5</li>
+</ul>
+
+<script>
+
+
+    // function explorer(htmlElement) {
+    //     console.log(htmlElement);
+    //     let children = htmlElement.children;
+    //     if (children.length != 0) {
+    //         for (const child of children) {
+    //             explorer(child);
+    //         }
+    //     }
+    //
+    // }
+    //
+    // explorer(document.body)
+
+    let tree = {
+        name: 'asd',
+        age: 31,
+        wife: {
+            name: 'qwe',
+            wage: 34,
+            father: {
+                name: 'asfdafhqwf',
+                age: 123
+
+            }
+
+        }
+    }
+
+
+    function treeBuilder(obj) {
+        for (const key in obj) {
+            if (typeof obj[key] !== 'object') {
+                let div = document.createElement('div');
+                div.innerText = key + " " + obj[key];
+                document.body.append(div)
+            }
+
+            if (typeof obj[key] === 'object') {
+                treeBuilder(obj[key]);
+            }
+
+        }
+    }
+
+    treeBuilder(tree);
+
+    function asd(index = 0, arr) {
+        console.log(arr[index])
+        index++;
+        if (index < arr.length) {
+            asd(index, arr);
+
+        }
+    }
+
+    asd(0, [11, 22, 33, 44, 55, 66, 77]);
+</script>
+
+
+</body>
+</html>
